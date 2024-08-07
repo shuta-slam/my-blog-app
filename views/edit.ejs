@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Post</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <main class="content">
+      <h1>Edit Post</h1>
+      <form action="/edit/<%= post.id %>" method="POST" class="create-form">
+        <div>
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            value="<%= post.title %>"
+          />
+        </div>
+        <div>
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" required>
+<%= post.content %></textarea
+          >
+        </div>
+        <button type="submit" class="btn-create">Edit Post</button>
+      </form>
+    </main>
+  </body>
+</html>
